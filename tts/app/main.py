@@ -8,6 +8,9 @@ from openai_tts import OpenAITTS
 from cartesia_tts import CartesiaTTS
 import textwrap
 
+from tts.app.null_tts import NullTTS
+from tts.app.playht_tts import PlayHtTTS
+
 # Initialize FastAPI app
 app = FastAPI()
 
@@ -45,6 +48,8 @@ class TTSFactory:
                 cls._instance = OpenAITTS()
             elif provider == "cartesia":
                 cls._instance = CartesiaTTS()
+            elif provider == "playht":
+                cls._instance = PlayHtTTS()
             else:
                 raise ValueError(f"Unsupported TTS provider: {provider}")
         return cls._instance
