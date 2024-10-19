@@ -50,6 +50,8 @@ class TTSFactory:
                 cls._instance = CartesiaTTS()
             elif provider == "playht":
                 cls._instance = PlayHtTTS()
+            elif provider == "nulltts":
+                cls._instance = NullTTS()
             else:
                 raise ValueError(f"Unsupported TTS provider: {provider}")
         return cls._instance
