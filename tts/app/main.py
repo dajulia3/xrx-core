@@ -8,8 +8,8 @@ from openai_tts import OpenAITTS
 from cartesia_tts import CartesiaTTS
 import textwrap
 
-from tts.app.null_tts import NullTTS
-from tts.app.playht_tts import PlayHtTTS
+from null_tts import NullTTS
+from playht_tts import PlayHtTTS
 
 # Initialize FastAPI app
 app = FastAPI()
